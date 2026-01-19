@@ -1,12 +1,35 @@
-<h1 align="center">⏰ termclock</h1>
+<h1 align="center">
+  ⏰ termclock – Animated Terminal Clock for Linux & SSH
+</h1>
 
 <p align="center">
-  A modern terminal clock with smooth animations and clean fonts.<br>
-  A simple and customizable alternative to tty-clock.
+  A fast and lightweight <strong>animated terminal clock</strong> written in Python.<br>
+  A modern <strong>tty-clock alternative</strong> with ASCII fonts, smooth animations,
+  and optional system information.
 </p>
 
 <p align="center">
-  <code>Python</code> · <code>Terminal</code> · <code>ASCII Fonts</code> · <code>Low CPU</code>
+  <strong>terminal clock</strong> ·
+  <strong>animated terminal app</strong> ·
+  <strong>tty-clock alternative</strong> ·
+  <strong>linux terminal clock</strong> ·
+  <strong>python terminal UI</strong>
+</p>
+
+<hr>
+
+<h2>📌 What is termclock?</h2>
+
+<p>
+  <strong>termclock</strong> is a modern animated terminal clock designed for
+  Linux, macOS, SSH, and TTY environments. It runs fully inside the terminal
+  and focuses on clean visuals, smooth animations, and low CPU usage.
+</p>
+
+<p>
+  It is written in Python and works as a lightweight alternative to tty-clock,
+  while offering better customization, multiple ASCII fonts, color themes,
+  and optional system monitoring.
 </p>
 
 <hr>
@@ -14,13 +37,14 @@
 <h2>✨ Features</h2>
 
 <ul>
-  <li>Animated terminal clock</li>
+  <li>Animated terminal clock with smooth transitions</li>
   <li>Multiple ASCII and Unicode fonts</li>
-  <li>Color customization</li>
-  <li>Optional system information</li>
+  <li>Customizable colors and themes</li>
   <li>Optional date display</li>
-  <li>Config file and CLI flags</li>
-  <li>Works on SSH and TTY</li>
+  <li>Optional system info (CPU, RAM, disk, battery, network)</li>
+  <li>CLI flags and config file support</li>
+  <li>Low CPU usage</li>
+  <li>Works on SSH, TTY, and local terminals</li>
 </ul>
 
 <hr>
@@ -35,11 +59,15 @@ chmod +x install.sh
 <p>The installer will:</p>
 
 <ul>
-  <li>Check Python version (3.6+)</li>
-  <li>Install <code>psutil</code></li>
-  <li>Copy binary to <code>/usr/local/bin</code></li>
-  <li>Create default config</li>
+  <li>Check Python version (Python 3.6+ required)</li>
+  <li>Install <code>psutil</code> if missing</li>
+  <li>Copy <code>termclock</code> to <code>/usr/local/bin</code></li>
+  <li>Create a default configuration file</li>
 </ul>
+
+<p>After installation, run:</p>
+
+<pre><code>termclock</code></pre>
 
 <hr>
 
@@ -57,24 +85,23 @@ termclock --no-animation
 
 <hr>
 
-<h2>⌨️ Controls</h2>
+<h2>⌨️ Keyboard Controls</h2>
 
 <ul>
   <li><strong>q</strong> — Quit</li>
-  <li><strong>f</strong> — Change font</li>
-  <li><strong>r</strong> — Reload config</li>
+  <li><strong>f</strong> — Cycle fonts</li>
+  <li><strong>r</strong> — Reload configuration</li>
 </ul>
 
 <hr>
 
 <h2>⚙️ Configuration</h2>
 
-<p>Config file location:</p>
+<p>Configuration file location:</p>
 
-<pre><code>~/.termclock.conf
-</code></pre>
+<pre><code>~/.termclock.conf</code></pre>
 
-<p>Example:</p>
+<p>Example configuration:</p>
 
 <pre><code>font=block
 color=cyan
@@ -84,12 +111,13 @@ date=false
 info=false
 </code></pre>
 
+<p>Press <strong>r</strong> to reload the config while the app is running.</p>
+
 <hr>
 
-<h2>🔠 Fonts Preview</h2>
+<h2>🔠 Font Preview</h2>
 
 <p><strong>Block</strong></p>
-
 <pre><code> ███   ███
 █   █ █   █
 █   █ █   █
@@ -98,7 +126,6 @@ info=false
 </code></pre>
 
 <p><strong>Digital</strong></p>
-
 <pre><code> _|_|_   _|_|_
    |       |
  _|_|_   _|_|_
@@ -107,14 +134,12 @@ info=false
 </code></pre>
 
 <p><strong>Slim</strong></p>
-
 <pre><code> ┃  ┃
  ┃  ┃
  ┃  ┃
 </code></pre>
 
 <p><strong>Dots</strong></p>
-
 <pre><code> ●●●
    ●
  ●●●
@@ -142,39 +167,39 @@ info=false
 
 <ul>
   <li>Smooth digit slide on time change</li>
-  <li>Optional fade effect</li>
-  <li>No flicker</li>
-  <li>Low refresh rate to save CPU</li>
+  <li>Optional fade-style transition</li>
+  <li>No flicker or screen tearing</li>
+  <li>Frame rate limited for performance</li>
 </ul>
 
 <p>Disable animations:</p>
 
-<pre><code>termclock --no-animation
-</code></pre>
+<pre><code>termclock --no-animation</code></pre>
 
 <hr>
 
-<h2>📊 System Info</h2>
+<h2>📊 System Information</h2>
+
+<p>When enabled, termclock can display:</p>
 
 <ul>
   <li>CPU usage</li>
   <li>RAM usage</li>
   <li>Disk usage</li>
-  <li>Battery level</li>
+  <li>Battery level (if available)</li>
   <li>Network activity</li>
 </ul>
 
-<p>Enable:</p>
+<p>Enable system info:</p>
 
-<pre><code>termclock --info
-</code></pre>
+<pre><code>termclock --info</code></pre>
 
 <hr>
 
 <h2>🎨 Colors</h2>
 
-<pre><code>black red green yellow
-blue magenta cyan white
+<pre><code>black  red  green  yellow
+blue   magenta  cyan  white
 </code></pre>
 
 <hr>
@@ -182,9 +207,9 @@ blue magenta cyan white
 <h2>⚡ Performance</h2>
 
 <ul>
-  <li>CPU usage under 2%</li>
+  <li>CPU usage usually below 2%</li>
   <li>Stable refresh loop</li>
-  <li>Handles terminal resize</li>
+  <li>Handles terminal resize correctly</li>
 </ul>
 
 <hr>
@@ -192,17 +217,16 @@ blue magenta cyan white
 <h2>📋 Requirements</h2>
 
 <ul>
-  <li>Python 3.6+</li>
-  <li><code>curses</code></li>
-  <li><code>psutil</code> (optional)</li>
+  <li>Python 3.6 or newer</li>
+  <li><code>curses</code> module (usually preinstalled)</li>
+  <li><code>psutil</code> (optional, for system info)</li>
 </ul>
 
 <hr>
 
 <h2>🗑️ Uninstall</h2>
 
-<pre><code>./uninstall.sh
-</code></pre>
+<pre><code>./uninstall.sh</code></pre>
 
 <hr>
 
