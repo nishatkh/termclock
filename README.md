@@ -27,7 +27,7 @@
 </p>
 
 <p>
-  It is written in Python and works as a lightweight alternative to tty-clock,
+  It is written in Python and works as a lightweight,
   while offering better customization, multiple ASCII fonts, color themes,
   and optional system monitoring.
 </p>
