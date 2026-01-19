@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "termclock"
+version = "1.0.0"
+description = "A modern, animated terminal clock that runs fully inside your terminal"
+authors = [{name = "TermClock Developer", email = "termclock@example.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.6"
+dependencies = [
+    "psutil>=5.0.0; sys_platform != 'win32'",
+]
+
+[project.scripts]
+termclock = "termclock:main"
+
+[project.urls]
+Homepage = "https://github.com/termclock/termclock"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["termclock*"]
+
+[tool.setuptools.package-data]
+termclock = ["fonts/*.font", "themes/*.theme"]
