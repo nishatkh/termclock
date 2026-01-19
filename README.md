@@ -1,98 +1,220 @@
-# termclock
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>termclock</title>
+</head>
+<body>
 
-A modern, animated terminal clock that runs fully inside your terminal. A clean, customizable, and efficient alternative to tty-clock with smooth animations and system information display.
+<h1>termclock</h1>
 
-## Features
+<p>
+  <strong>termclock</strong> is a modern animated clock for the terminal.
+  It runs fully inside the terminal and looks clean, smooth, and readable.
+  It is a simple and flexible alternative to tty-clock.
+</p>
 
-- **Animated Display**: Smooth digit transitions and animations
-- **Multiple Fonts**: Block, slim, digital, and rounded fonts
-- **Customizable Colors**: Various color options for the clock
-- **System Info**: CPU, RAM, disk, battery, and network usage
-- **Date Display**: Shows current date
-- **Configurable**: Both CLI arguments and config file support
-- **Efficient**: Low CPU usage, works on SSH and TTY
+<hr>
 
-## Installation
+<h2>Features</h2>
+<ul>
+  <li>Smooth animated clock display</li>
+  <li>Multiple built-in fonts</li>
+  <li>Color customization</li>
+  <li>Optional system information</li>
+  <li>Optional date display</li>
+  <li>CLI flags and config file support</li>
+  <li>Low CPU usage</li>
+  <li>Works on SSH and TTY</li>
+</ul>
 
-```bash
-cd termclock
+<hr>
+
+<h2>Installation</h2>
+
+<pre><code>cd termclock
 chmod +x install.sh
 ./install.sh
-```
+</code></pre>
 
-The installer will:
-- Check Python version (requires Python 3.6+)
-- Install required packages (psutil)
-- Copy the binary to `/usr/local/bin`
-- Create default configuration
+<p>The installer will:</p>
+<ul>
+  <li>Check Python version (Python 3.6+ required)</li>
+  <li>Install required packages (<code>psutil</code>)</li>
+  <li>Copy <code>termclock</code> to <code>/usr/local/bin</code></li>
+  <li>Create a default configuration file</li>
+</ul>
 
-## Usage
+<p>After installation, run:</p>
 
-```bash
-termclock                    # Run with default settings
-termclock --help            # Show all options
-termclock --font digital    # Use digital font
-termclock --color green     # Use green color
-termclock --24h             # Use 24-hour format
-termclock --date            # Show date
-termclock --info            # Show system info
-termclock --no-animation    # Disable animations
-```
+<pre><code>termclock</code></pre>
 
-## Controls
+<hr>
 
-- `q` - Quit the application
-- `f` - Cycle through available fonts
-- `r` - Reload configuration file
+<h2>Usage</h2>
 
-## Configuration File
+<pre><code>termclock                     # Default clock
+termclock --help              # Show all options
+termclock --font digital      # Change font
+termclock --color green       # Change color
+termclock --24h               # 24-hour format
+termclock --date              # Show date
+termclock --info              # Show system info
+termclock --no-animation      # Disable animation
+</code></pre>
 
-The configuration file is located at `~/.termclock.conf`. Example:
+<hr>
 
-```ini
-font=block
+<h2>Keyboard Controls</h2>
+<ul>
+  <li><strong>q</strong> – Quit</li>
+  <li><strong>f</strong> – Change font</li>
+  <li><strong>r</strong> – Reload config</li>
+</ul>
+
+<hr>
+
+<h2>Configuration File</h2>
+
+<p>Config file location:</p>
+
+<pre><code>~/.termclock.conf</code></pre>
+
+<p>Example:</p>
+
+<pre><code>font=block
 color=cyan
 format=24h
 animation=true
 date=false
 info=false
-```
+</code></pre>
 
-## Customization
+<p>Press <strong>r</strong> to reload the config while running.</p>
 
-### Fonts
-- `block` - Big, bold, clear digits
-- `slim` - Minimal and narrow
-- `digital` - Classic LED style
-- `rounded` - Soft Unicode curves
-- `ascii` - Stylish ASCII art inspired
-- `outline` - Outline-style characters
-- `star` - Star-filled digits
-- `braille` - Braille pattern style
-- `dots` - Dot pattern style
+<hr>
 
-### Colors
-- `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `white`
+<h2>Fonts</h2>
 
-## Uninstallation
+<p>Fonts use ASCII / Unicode art and are easy to extend.</p>
 
-```bash
-./uninstall.sh
-```
+<h3>Block Font</h3>
+<pre><code> ███   ███
+█   █ █   █
+█   █ █   █
+█   █ █   █
+ ███   ███
+</code></pre>
 
-## Performance
+<h3>Digital Font</h3>
+<pre><code> _|_|_   _|_|_
+   |       |
+ _|_|_   _|_|_
+ |           |
+ _|_|_   _|_|_
+</code></pre>
 
-- CPU usage typically below 2%
-- Stable refresh loop
-- Works on SSH and TTY terminals
-- Resizes properly with terminal window
+<h3>Slim Font</h3>
+<pre><code> ┃  ┃
+ ┃  ┃
+ ┃  ┃
+</code></pre>
 
-## Requirements
+<h3>Dots Font</h3>
+<pre><code> ●●●
+   ●
+ ●●●
+ ●
+ ●●●
+</code></pre>
 
-- Python 3.6+
-- `curses` module (usually comes with Python)
-- `psutil` for system information (optional but recommended)
+<h3>Available Fonts</h3>
+<ul>
+  <li><code>block</code> – big and bold</li>
+  <li><code>slim</code> – narrow and clean</li>
+  <li><code>digital</code> – LED style</li>
+  <li><code>rounded</code> – smooth Unicode</li>
+  <li><code>ascii</code> – classic ASCII</li>
+  <li><code>outline</code> – border style</li>
+  <li><code>star</code> – star-filled</li>
+  <li><code>braille</code> – braille pattern</li>
+  <li><code>dots</code> – dot-based</li>
+</ul>
 
-## License
+<p>Change font:</p>
+<pre><code>termclock --font block</code></pre>
 
-MIT License
+<hr>
+
+<h2>Animations</h2>
+
+<ul>
+  <li>Digits slide smoothly when time changes</li>
+  <li>Optional fade effect</li>
+  <li>No screen flicker</li>
+  <li>Frame rate limited to save CPU</li>
+</ul>
+
+<p>Disable animation:</p>
+<pre><code>termclock --no-animation</code></pre>
+
+<hr>
+
+<h2>System Information (Optional)</h2>
+
+<p>When enabled, termclock can show:</p>
+<ul>
+  <li>CPU usage</li>
+  <li>RAM usage</li>
+  <li>Disk usage</li>
+  <li>Battery level (if available)</li>
+  <li>Network activity</li>
+</ul>
+
+<p>Enable system info:</p>
+<pre><code>termclock --info</code></pre>
+
+<hr>
+
+<h2>Colors</h2>
+
+<pre><code>black, red, green, yellow,
+blue, magenta, cyan, white
+</code></pre>
+
+<p>Example:</p>
+<pre><code>termclock --color cyan</code></pre>
+
+<hr>
+
+<h2>Performance</h2>
+<ul>
+  <li>CPU usage usually under 2%</li>
+  <li>Stable refresh loop</li>
+  <li>Works over SSH</li>
+  <li>Handles terminal resize correctly</li>
+</ul>
+
+<hr>
+
+<h2>Requirements</h2>
+<ul>
+  <li>Python 3.6 or newer</li>
+  <li><code>curses</code> (usually preinstalled)</li>
+  <li><code>psutil</code> (optional, for system info)</li>
+</ul>
+
+<hr>
+
+<h2>Uninstall</h2>
+
+<pre><code>./uninstall.sh</code></pre>
+
+<hr>
+
+<h2>License</h2>
+
+<p>MIT License</p>
+
+</body>
+</html>
